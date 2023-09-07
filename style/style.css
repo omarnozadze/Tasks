@@ -1,0 +1,367 @@
+@import url(https://fonts.google.com/specimen/Josefin+Sans);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans',sans-serif;
+
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: #FAFAFA;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    
+}
+
+.background{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    background-image: url(../images/bg-desktop-light.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+.todo{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    
+
+}
+.todo-container{
+    width: 540px;
+    padding-top: 70px;
+}
+h2{
+    color: #fff;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 15px;
+    
+}
+.moon{
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    
+}
+#checked{
+    visibility: hidden
+}
+.create-todo{
+    width: 100%;
+    height: 64px;
+    border-radius: 5px;
+    background: #fff;
+    margin-top: 48px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+
+.input-div{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url(./images/icon-check.svg),linear-gradient(rgba(85,221,255,1),rgba(192,88,243,1));
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+
+}
+.text{
+    width: 60%;
+    background-color: whitesmoke;
+}
+
+.input-text{
+    color: #9495A5;
+    font-size: 18px;
+    font-style: normal;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.25px;
+    width: 200px;
+    
+}
+ul{
+    border-radius: 5px;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+    height: 64px;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-bottom: 1px solid #E3E4F1;
+}
+
+h3{
+    font-size: 18px ;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.25px;
+}
+.todo-list{
+    margin-top: 24px;
+    border-radius: 10px;
+    background: white;
+}
+.ul-footer{
+    width: 100%;
+    height: 64px;
+    background: white;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.left{
+    color: #9495A5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.194px;
+    
+
+}
+h4{
+    color: #9495A5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.194px;
+    cursor: pointer;
+
+}
+
+.active-texts{
+    display: flex;
+    gap: 19px;
+
+}
+#all{
+    color: #3a7cfd;
+}
+
+.right{
+    color: #9495A5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.194px;
+    cursor: pointer;
+}
+
+.darkElement{
+    background: #25273D;
+}
+.drag{
+    text-align: center;
+    margin-top: 48px;
+    
+}
+.mobile-footer{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+.mobile-flex{
+    display: flex;
+    gap: 10px ;
+}
+@media only screen and (max-width:768px){
+.todo-container{
+width: 327px;
+}
+.mobile-footer{
+    display: flex;
+
+}
+.active-texts{
+    display: none;
+}
+}
+
+.label{
+    position: re;
+    width: 80px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 20px;
+    cursor: pointer;
+    right: 430px;
+}
+.input:checked +.label{
+    background-color: black;
+}
+
+
+.input{
+    visibility: hidden;
+  
+}
+
+.circle{
+    width: 34px;
+    background-color: white;
+    height: 34px;
+    border-radius: 50%;
+    top: 3px;
+    
+    left: 3px;
+   animation: toggleOff .4s linear forwards;
+}
+.input:checked + .label .circle{
+animation: toggleOn .4s linear forwards;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-color: gray;
+    border-radius: 15px;
+
+  }
+  
+  .edit,
+  .delete {
+    /* Existing button styles */
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .edit {
+    order: 1; /* Set the order to 1, so the edit button comes after the text */
+  }
+  
+  .delete {
+    margin-left: auto; /* Push the delete button to the right */
+  }
+  
+  @media screen and (max-width: 480px) {
+    .task {
+      flex-direction: column; /* Switch to column layout */
+      align-items: flex-start; /* Align items to the left */
+    }
+  
+    .edit,
+    .delete {
+      margin-left: 0; /* Reset margin-left to avoid pushing buttons to the right */
+    }
+  }
+  .checkbox-item{
+    width: 50px;
+    height: 20px;
+  }
+    /* CSS */
+.edit {
+      background: #5E5DF0;
+      border-radius: 999px;
+      box-shadow: #5E5DF0 0 10px 20px -10px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      opacity: 1;
+      outline: 0 solid transparent;
+      padding: 8px 18px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: fit-content;
+      word-break: break-word;
+      border: 0;
+    }
+    #tasks .task .content{
+        flex: 1 1 0%;
+       position: absolute;
+        
+    }
+
+
+    .active-task {
+        background-color: lightgreen;
+      }
+      
+      .inactive-task {
+        background-color: lightgray;
+      }
+
+    .delete {
+        background: red;
+        border-radius: 999px;
+        box-shadow: red 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        opacity: 1;
+        outline: 0 solid transparent;
+        padding: 8px 18px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: fit-content;
+        word-break: break-word;
+        border: 0;
+      }
+
+
+@keyframes toggleOn{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(40px);
+    }
+    
+}
+@keyframes toggleOff{
+    0%{
+        transform: translateX(40px);
+    }
+    100%{
+        transform: translateX(0x);
+    }
+}
+
+
+
+
+

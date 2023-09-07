@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Todo app</title>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="todo-container">
+    <div class="todo">
+      <h2>TODO</h2>
+      <input type="checkbox" name="" id="dark-mode" class="input">
+      <label for="dark-mode" class="label">
+        <div class="circle"></div>
+      </label>
+    </div>
+    <form id="new-task-form">
+      <div class="create-todo dark">
+        <button id="new-task-submit" type="submit" class="btn btn-info">Add Task</button>
+        <div id="checked" class="checkbox-item">
+          <input class="checkbox1" type="checkbox">
+          <div class="input-div"></div>
+        </div>
+        <input id="new-task-input" class="input-text" type="text" placeholder="Create a new todo...">
+      </div>
+    </form>
+    <div id="tasks" class="todo-list dark">
+      <ul id="add_ul"></ul>
+      <ul>
+        <div class="ul-footer dark">
+          <h3 class="left" id="counter">0</h3>
+          
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <script src="javascript/index.js"></script>
+</body>
+</html>
